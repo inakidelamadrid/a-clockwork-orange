@@ -1,8 +1,40 @@
+<RobotoButton@Button>:
+    font_name: 'Roboto'
+    font_size: 25
+    bold: True
+    background_normal: 'assets/button_normal.png'
+    background_down: 'assets/button_down.png'
+    border: (2, 2, 2, 2)
+
 <Label>:
     font_name: 'Roboto'
     font_size: 60
     markup: True
+
+BoxLayout:
+    orientation: 'vertical'
+
+    Label:
+        id: time
+        text: '[b]00[/b]:00:00'
+
+    # create a nested box layout with two buttons
+    BoxLayout:
+        height: 90
+        orientation: 'horizontal'
+        padding: 20
+        spacing: 20
+        size_hint: (1, None)
+
+        RobotoButton:
+            id: start_stop
+            text: "Start"
+            on_press: app.start_stop()
+        RobotoButton:
+            id: reset
+            text: "Reset"
     
-Label:
-    text: "Hello, Clock App!"
+    Label:
+        id: stopwatch
+        text: "Stopwatch"
 
