@@ -2,6 +2,7 @@
     font_name: 'Roboto'
     font_size: 25
     bold: True
+    padding_y: 32
     background_normal: 'assets/button_normal.png'
     background_down: 'assets/button_down.png'
     border: (2, 2, 2, 2)
@@ -20,20 +21,23 @@ BoxLayout:
 
     # create a nested box layout with two buttons
     BoxLayout:
-        height: 90
+        height: 120
         orientation: 'horizontal'
-        padding: 20
-        spacing: 20
+        padding: 16
+        spacing: 32
         size_hint: (1, None)
 
         RobotoButton:
             id: start_stop
             text: "Start"
             on_press: app.start_stop()
+
         RobotoButton:
             id: reset
             text: "Reset"
-    
+            on_press: app.reset()
+            background_normal: 'assets/red_button_normal.png'
+            background_down: 'assets/red_button_down.png'
     Label:
         id: stopwatch
         text: "Stopwatch"

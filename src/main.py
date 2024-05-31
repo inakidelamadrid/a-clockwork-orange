@@ -26,6 +26,13 @@ class ClockApp(App):
         self.root.ids.start_stop.text = 'Start' if self.sw_started else 'Stop'
         self.sw_started = not self.sw_started
 
+    def reset(self):
+        if self.sw_started:
+            self.root.ids.start_stop.text = 'Start'
+            self.sw_started = False
+
+        self.sw_seconds = 0
+
 if __name__ == '__main__':
     Window.clearcolor = get_color_from_hex('#101216')
     LabelBase.register(name='Roboto',
