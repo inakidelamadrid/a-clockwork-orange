@@ -1,3 +1,4 @@
+# python env/share/kivy-examples/demo/kivycatalog/main.py
 from kivy.app import App
 from kivy.core.window import Window
 from kivy.clock import Clock
